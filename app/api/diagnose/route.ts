@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { runDiagnosis } from "@/lib/ai/provider";
 import type { DiagnosisInput, IssueType } from "@/types/diagnosis";
 
+export const maxDuration = 30;
+
 const ISSUE_TYPES = new Set<IssueType>([
   "scanner",
   "receipt-printer",

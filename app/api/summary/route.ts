@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { runSummary } from "@/lib/ai/provider";
 import type { StoredSession } from "@/types/diagnosis";
 
+export const maxDuration = 30;
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Partial<StoredSession>;

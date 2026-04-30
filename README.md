@@ -122,8 +122,12 @@ This project is ready for Vercel deployment.
 
 1. Push the repository to GitHub.
 2. Import the repository into [Vercel](https://vercel.com/).
-3. Add the required environment variables in the Vercel project settings.
-4. Deploy.
+3. Framework Preset should be detected as `Next.js`.
+4. Root Directory should be the project root.
+5. Build Command should be `npm run build`.
+6. Install Command should be `npm install`.
+7. Add the required environment variables in the Vercel project settings.
+8. Deploy.
 
 Required production env values:
 
@@ -131,6 +135,32 @@ Required production env values:
 - `OPENAI_API_KEY` or `OPENROUTER_API_KEY`
 - `OPENAI_MODEL` or `OPENROUTER_MODEL`
 - `NEXT_PUBLIC_APP_URL`
+
+### Suggested Vercel environment values
+
+For OpenAI:
+
+```env
+AI_PROVIDER=openai
+OPENAI_API_KEY=your_key_here
+OPENAI_MODEL=gpt-4.1-mini
+NEXT_PUBLIC_APP_URL=https://your-project.vercel.app
+```
+
+For OpenRouter:
+
+```env
+AI_PROVIDER=openrouter
+OPENROUTER_API_KEY=your_key_here
+OPENROUTER_MODEL=openai/gpt-4.1-mini
+NEXT_PUBLIC_APP_URL=https://your-project.vercel.app
+```
+
+Notes:
+
+- `NEXT_PUBLIC_APP_URL` should point to the public Vercel URL or your custom domain.
+- The app can also fall back to Vercel deployment URLs automatically for server-side OpenRouter requests, but setting `NEXT_PUBLIC_APP_URL` explicitly is still the safest production option.
+- AI API calls run through Next.js route handlers, not from the browser directly.
 
 ## GitHub Push Checklist
 

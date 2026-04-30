@@ -23,6 +23,25 @@ type ProviderConfig = {
   headers?: Record<string, string>;
 };
 
+function resolveAppUrl() {
+  const explicit = process.env.NEXT_PUBLIC_APP_URL;
+  if (explicit) {
+    return explicit;
+  }
+
+  const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (productionUrl) {
+    return productionUrl.startsWith("http") ? productionUrl : `https://${productionUrl}`;
+  }
+
+  const deploymentUrl = process.env.VERCEL_URL;
+  if (deploymentUrl) {
+    return deploymentUrl.startsWith("http") ? deploymentUrl : `https://${deploymentUrl}`;
+  }
+
+  return "http://localhost:3000";
+}
+
 function resolveProvider(): ProviderConfig | null {
   const provider = process.env.AI_PROVIDER?.toLowerCase();
 
@@ -49,7 +68,7 @@ function resolveProvider(): ProviderConfig | null {
       model: process.env.OPENROUTER_MODEL || "openai/gpt-4.1-mini",
       baseURL: "https://openrouter.ai/api/v1",
       headers: {
-        "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+        "HTTP-Referer": resolveAppUrl(),
         "X-Title": "AkariOps",
       },
     };
@@ -70,7 +89,7 @@ function resolveProvider(): ProviderConfig | null {
       model: process.env.OPENROUTER_MODEL || "openai/gpt-4.1-mini",
       baseURL: "https://openrouter.ai/api/v1",
       headers: {
-        "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+        "HTTP-Referer": resolveAppUrl(),
         "X-Title": "AkariOps",
       },
     };
