@@ -1,6 +1,6 @@
 # AkariOps
 
-AkariOps is an AI-first troubleshooting web application for retail operations. It uses an original anime-inspired agent named Akari to guide users through scanner, receipt printer, POS, network, and inventory sync issues before escalating to human support.
+AkariOps is an AI-first troubleshooting web application for retail operations. It uses an original agent named Akari to guide users through scanner, receipt printer, POS, network, and inventory sync issues before escalating to human support.
 
 The local folder in this workspace is still named `Naruhina`, but the product brand inside the app is `AkariOps`.
 
@@ -191,7 +191,7 @@ git commit -m "Initial commit"
 ## Repository Notes
 
 - Session history is stored in browser `localStorage` for MVP speed.
-- The mascot and brand direction are original anime-inspired placeholders, not direct franchise assets.
+- The mascot and brand direction are original placeholders, not direct franchise assets.
 - AI requests are made server-side through `app/api/*` routes.
 
 ## Project Structure

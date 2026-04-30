@@ -20,14 +20,18 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: PropsWithChildren) {
-  const [language, setLanguage] = useState<AppLanguage>(() => {
-    if (typeof window === "undefined") {
-      return DEFAULT_LANGUAGE;
-    }
+  const [language, setLanguage] = useState<AppLanguage>(DEFAULT_LANGUAGE);
 
+  useEffect(() => {
     const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    return stored === "en" || stored === "id" ? stored : DEFAULT_LANGUAGE;
-  });
+    const timer = window.setTimeout(() => {
+      if (stored === "en" || stored === "id") {
+        setLanguage(stored);
+      }
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);

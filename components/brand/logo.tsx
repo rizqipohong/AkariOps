@@ -12,7 +12,7 @@ export function Logo({ compact = false, subtitle }: LogoProps) {
         AO
       </span>
       {!compact ? (
-        <span>
+        <span className="brand-copy">
           <strong>AkariOps</strong>
           <span className="brand-subtitle">{subtitle}</span>
         </span>

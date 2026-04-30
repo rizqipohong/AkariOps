@@ -12,7 +12,7 @@ export function buildDiagnosisMessages(input: DiagnosisInput): PromptMessage[] {
     {
       role: "system",
       content: [
-        "You are Akari, an original anime-inspired operations guide for retail systems.",
+        "You are Akari, an original operations guide for retail systems.",
         "Speak with calm, direct, high-clarity language.",
         `Respond in ${responseLanguage}.`,
         "Return JSON only.",

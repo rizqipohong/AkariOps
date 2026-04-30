@@ -2,12 +2,12 @@
 
 ## Product Summary
 
-AkariOps is a browser-based AI troubleshooting assistant for store hardware and operational systems. The experience is guided by an original anime-inspired persona named Akari that feels like a fast field operator for retail support.
+AkariOps is a browser-based AI troubleshooting assistant for store hardware and operational systems. The experience is guided by an original persona named Akari that feels like a fast field operator for retail support.
 
 ## Challenge Fit
 
 - AI is central to the product, not a chatbot add-on
-- The product has a strong anime character identity
+- The product has a strong character identity
 - The app is designed for browser use and Vercel deployment
 - The use case is distinct from generic chat applications
 

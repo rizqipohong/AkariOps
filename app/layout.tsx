@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AkariOps",
-  description: "AI-first anime-inspired troubleshooting agent for retail operations.",
+  description: "AI-first troubleshooting agent for retail operations.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
