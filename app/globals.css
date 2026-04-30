@@ -164,16 +164,16 @@ textarea {
 }
 
 .brand-emblem {
-  display: inline-grid;
-  place-items: center;
+  display: inline-block;
   width: 52px;
   height: 52px;
-  border-radius: 18px;
-  background: linear-gradient(145deg, var(--orange), #ffb14d);
-  color: #fff7ee;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.brand-emblem-img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .stack-xl,
